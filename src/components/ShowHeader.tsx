@@ -50,7 +50,6 @@ const ShowHeader = ({ rating, image, name, summary }: Show) => {
                             alt={name}
                             fill
                             priority
-                            loading="eager"
                             className="object-cover"
                             placeholder="blur"
                             blurDataURL="/images/movie-poster-placeholder.png"
