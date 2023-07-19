@@ -14,6 +14,7 @@ const Rating = ({ rating }: RatingProps) => {
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     className="mt-2"
+                    key={index}
                 >
                     <path
                         fillRule="evenodd"
