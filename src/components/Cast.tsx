@@ -23,7 +23,12 @@ interface CastProps {
 
 const Cast = ({ cast }: CastProps) => {
     return (
-        <motion.div initial="hidden" whileInView="visible" variants={container}>
+        <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={container}
+        >
             <motion.h2 variants={slideDown} className="text-2xl">
                 Starring
             </motion.h2>
