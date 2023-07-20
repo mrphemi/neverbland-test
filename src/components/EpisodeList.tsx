@@ -24,22 +24,28 @@ interface EpisodeListProps {
 }
 
 const EpisodeList = ({ episodes }: EpisodeListProps) => {
+    if (!episodes.length) {
+        return <h1 className="text-3xl text-center">No Episodes Available</h1>;
+    }
+
     return (
-        <motion.div variants={container} initial="hidden" animate="visible">
-            <motion.h2 variants={slideDown} className="text-2xl">
-                Last Added Shows
-            </motion.h2>
-            <motion.ul
-                variants={slideUp}
-                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-x-3 gap-y-10 md:gap-x-5 mt-5"
-            >
-                {episodes.map((episode) => (
-                    <li key={episode.id}>
-                        <Episode {...episode} />
-                    </li>
-                ))}
-            </motion.ul>
-        </motion.div>
+        <div className="relative my-5 md:-mt-28 md:mb-20">
+            <motion.div variants={container} initial="hidden" animate="visible">
+                <motion.h2 variants={slideDown} className="text-2xl">
+                    Last Added Shows
+                </motion.h2>
+                <motion.ul
+                    variants={slideUp}
+                    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-x-3 gap-y-10 md:gap-x-5 mt-5"
+                >
+                    {episodes.map((episode) => (
+                        <li key={episode.id}>
+                            <Episode {...episode} />
+                        </li>
+                    ))}
+                </motion.ul>
+            </motion.div>
+        </div>
     );
 };
 
