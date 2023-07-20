@@ -22,7 +22,7 @@ export const container = {
 };
 
 const ShowHeader = ({ rating, image, name, summary }: Show) => {
-    const ratingScore = rating.average && Math.floor(rating.average / 2);
+    const ratingScore = rating.average ? Math.floor(rating.average / 2) : 0;
 
     return (
         <header className="py-10 lg:pb-0 bg-sh-blue-secondary md:bg-banner bg-no-repeat bg-cover w-full">
@@ -50,6 +50,7 @@ const ShowHeader = ({ rating, image, name, summary }: Show) => {
                             alt={name}
                             fill
                             priority
+                            loading="eager"
                             className="object-cover"
                             placeholder="blur"
                             blurDataURL="/images/movie-poster-placeholder.png"
@@ -63,11 +64,9 @@ const ShowHeader = ({ rating, image, name, summary }: Show) => {
                         variants={container}
                         className="space-y-3 lg:pb-10 h-fit"
                     >
-                        {rating.average && (
-                            <motion.div variants={slideDown}>
-                                <Ratings rating={ratingScore} />
-                            </motion.div>
-                        )}
+                        <motion.div variants={slideDown}>
+                            <Ratings rating={ratingScore} />
+                        </motion.div>
 
                         <motion.h1 variants={slideDown} className="text-4xl">
                             {name}

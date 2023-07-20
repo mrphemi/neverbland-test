@@ -8,7 +8,7 @@ const Episode = ({
     number,
     show: { id, name, rating, image },
 }: EpisodeType) => {
-    const ratingScore = rating.average && Math.floor(rating.average / 2);
+    const ratingScore = rating.average ? Math.floor(rating.average / 2) : 0;
     return (
         <Link href={`/${id}`} className="block relative">
             <Image
@@ -21,7 +21,7 @@ const Episode = ({
                 blurDataURL="/images/movie-poster-placeholder.png"
             />
 
-            {rating.average && <Ratings rating={ratingScore} />}
+            <Ratings rating={ratingScore} />
             {number && (
                 <p className="text-xs text-center font-medium bg-sh-red inline-flex justify-center items-center rounded-full absolute top-2 right-3 w-12 h-12 px-.5">
                     Ep. {number}
