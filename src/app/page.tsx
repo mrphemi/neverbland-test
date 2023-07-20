@@ -18,7 +18,7 @@ export default async function Home() {
     return (
         <>
             <HomeHeader />
-            <main className="container relative my-5 md:-mt-28 md:mb-20">
+            <main className="container">
                 <EpisodeList episodes={episodes} />
             </main>
         </>

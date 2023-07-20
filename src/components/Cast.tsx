@@ -32,7 +32,7 @@ const Cast = ({ cast }: CastProps) => {
             <motion.h2 variants={slideDown} className="text-2xl">
                 Starring
             </motion.h2>
-            <motion.ul variants={container} className="space-y-3 mt-5 md:mt-10">
+            <motion.ul variants={container} className="space-y-5 mt-5 md:mt-10">
                 {cast.map((person) => (
                     <motion.li variants={slideDown} key={person.person.id}>
                         <Person {...person} />
