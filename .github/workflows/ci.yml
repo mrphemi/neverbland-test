@@ -13,6 +13,6 @@ jobs:
           node-version: 18.x
           cache: 'npm'
       - name: Install deps
-      - run: npm install
+        run: npm install
       - name: Run tests
-      - run: npm test
+        run: npm test
