@@ -30,7 +30,6 @@ const episodes: Episode[] = [
             },
         },
     },
-
     {
         id: 2,
         number: 30,

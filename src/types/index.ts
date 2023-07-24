@@ -39,7 +39,11 @@ export const ShowSchema = z.object({
             name: z.string(),
         })
         .nullable(),
-    cast: z.array(PersonSchema).optional(),
+    _embedded: z
+        .object({
+            cast: z.array(PersonSchema),
+        })
+        .optional(),
 });
 
 export const EpisodeSchema = z.object({

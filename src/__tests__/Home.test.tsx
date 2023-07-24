@@ -10,7 +10,7 @@ afterEach(() => {
     server.resetHandlers();
 });
 
-describe("render fetched episodes", () => {
+describe("Home Page episodes list", () => {
     it("should render fetched episodes", async () => {
         render(await Home());
 
